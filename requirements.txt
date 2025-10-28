@@ -1,0 +1,10 @@
+django
+psycopg
+djangorestframework
+python-dotenv
+django-filter
+djangorestframework-simplejwt
+drf-yasg
+requests
+stripe
+django-requests
