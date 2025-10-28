@@ -30,5 +30,26 @@ python manage.py migrate
 docker-compose up
 ```
 
+## Регистрация пользователя 
+POST /user/
+
+```json
+{
+  "email": "",
+  "password": "",
+  "password1": ""
+}
+```
+
+## Авторизация пользователя 
+POST /token/
+
+```json
+{
+  "email": "",
+  "password": "",
+}
+```
+
 ## Документация API
 http://127.0.0.1:8000/swagger/
