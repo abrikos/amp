@@ -1,0 +1,20 @@
+[project]
+name = "amp"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Artem Filippow",email = "a.filippov@qtech.ru"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "django (>=5.2.7)",
+    "dotenv (>=0.9.9,<0.10.0)",
+    "drf-yasg (>=1.21.11,<2.0.0)",
+    "psycopg (>=3.2.12,<4.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
