@@ -1,3 +1,5 @@
+from django.utils.decorators import method_decorator
+from drf_yasg.utils import swagger_auto_schema
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -14,6 +16,35 @@ class MyTokenObtainPairView(TokenObtainPairView):
 
     serializer_class = MyTokenObtainPairSerializer
 
+@method_decorator(name='list', decorator=swagger_auto_schema(
+            operation_description="Retrieve a list of all User instances.",
+            operation_summary="Get all Users"
+        ))
+
+@method_decorator(name='create', decorator=swagger_auto_schema(
+            operation_description="Create User instance.",
+            operation_summary="Register User"
+        ))
+
+@method_decorator(name='retrieve', decorator=swagger_auto_schema(
+            operation_description="View User instance.",
+            operation_summary="View User by id"
+        ))
+
+@method_decorator(name='update', decorator=swagger_auto_schema(
+            operation_description="Update User instance.",
+            operation_summary="Update User by id"
+        ))
+
+@method_decorator(name='partial_update', decorator=swagger_auto_schema(
+            operation_description="Update some fields of User instance.",
+            operation_summary="Update User attributes by id"
+        ))
+
+@method_decorator(name='destroy', decorator=swagger_auto_schema(
+            operation_description="Delete User instance.",
+            operation_summary="Delete User by id"
+        ))
 
 class UserViewSet(viewsets.ModelViewSet):
     """User REST"""
